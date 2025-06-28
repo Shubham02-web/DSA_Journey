@@ -1,4 +1,4 @@
-let a = 768;
+// let a = 768;
 
 // Division
 // console.log(768 / 10);
@@ -14,3 +14,9 @@ let a = 768;
 // console.log(a % 10);  gave us last digit
 
 // console.log(a % 100);
+
+let i = 11;
+// let j = i++;
+// i = i++ + ++i;
+// i = ++i;
+console.log(i);
