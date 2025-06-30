@@ -41,3 +41,43 @@
 //   amount = amount - Discount;
 //   console.log("Total Paybale Amount : " + amount);
 // }
+
+// Manage Bijli Bill
+
+let unit = Number(prompt("Enter your unit ? "));
+let totalAmount = 0;
+let amount;
+let unt = 0;
+if (isNaN(unit)) {
+  console.log("Please Enter a Number");
+}
+if (unit <= 0) {
+  console.log("Please Enter Positive Number  ");
+}
+if (unit >= 300) {
+  unt = unit - 300;
+  unit = unit - unt;
+  amount = 12 * unt;
+  totalAmount += amount;
+  console.log("Total Amount by 12/unit : " + Number(amount));
+}
+if (unit >= 200) {
+  unt = unit - 200;
+  unit = unit - unt;
+  amount = 10 * unt;
+  totalAmount += amount;
+  console.log("Total Amount by 10/unit : " + Number(amount));
+}
+if (unit >= 100) {
+  unt = unit - 100;
+  unit = unit - unt;
+  amount = 8 * unt;
+  totalAmount += amount;
+  console.log("Total Amount by 8/unit : " + Number(amount));
+}
+if (unit > 0) {
+  amount = 5 * unit;
+  totalAmount += amount;
+  console.log("Total Amount by 5/unit : " + Number(amount));
+  console.log("Total Paybal Amount  : ", Number(totalAmount));
+}
