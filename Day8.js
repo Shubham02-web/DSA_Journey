@@ -44,7 +44,46 @@
 
 // Manage Bijli Bill
 
-let unit = Number(prompt("Enter your unit ? "));
+// let unit = Number(prompt("Enter your unit ? "));
+// let totalAmount = 0;
+// let amount;
+// let unt = 0;
+// if (isNaN(unit)) {
+//   console.log("Please Enter a Number");
+// }
+// if (unit <= 0) {
+//   console.log("Please Enter Positive Number  ");
+// }
+// if (unit >= 300) {
+//   unt = unit - 300;
+//   unit = unit - unt;
+//   amount = 12 * unt;
+//   totalAmount += amount;
+//   console.log("Total Amount by 12/unit : " + Number(amount));
+// }
+// if (unit >= 200) {
+//   unt = unit - 200;
+//   unit = unit - unt;
+//   amount = 10 * unt;
+//   totalAmount += amount;
+//   console.log("Total Amount by 10/unit : " + Number(amount));
+// }
+// if (unit >= 100) {
+//   unt = unit - 100;
+//   unit = unit - unt;
+//   amount = 8 * unt;
+//   totalAmount += amount;
+//   console.log("Total Amount by 8/unit : " + Number(amount));
+// }
+// if (unit > 0) {
+//   amount = 5 * unit;
+//   totalAmount += amount;
+//   console.log("Total Amount by 5/unit : " + Number(amount));
+//   console.log("Total Paybal Amount  : ", Number(totalAmount));
+// }
+
+// INR Denomination
+let unit = Number(prompt("Enter your Amount ? "));
 let totalAmount = 0;
 let amount;
 let unt = 0;
@@ -54,30 +93,66 @@ if (isNaN(unit)) {
 if (unit <= 0) {
   console.log("Please Enter Positive Number  ");
 }
-if (unit >= 300) {
-  unt = unit - 300;
-  unit = unit - unt;
-  amount = 12 * unt;
-  totalAmount += amount;
-  console.log("Total Amount by 12/unit : " + Number(amount));
+if (unit >= 500) {
+  unt = Math.floor(unit / 500);
+  unit = unit - unt * 500;
+  console.log("Total 500 Note  : " + unt);
+} else {
+  console.log("Total 500 Note : 0");
 }
 if (unit >= 200) {
-  unt = unit - 200;
-  unit = unit - unt;
-  amount = 10 * unt;
-  totalAmount += amount;
-  console.log("Total Amount by 10/unit : " + Number(amount));
+  unt = Math.floor(unit / 200);
+  unit = unit - unt * 200;
+  console.log("Total 200 Note  : " + unt);
+} else {
+  console.log("Total 200 Note : 0");
 }
 if (unit >= 100) {
-  unt = unit - 100;
-  unit = unit - unt;
-  amount = 8 * unt;
-  totalAmount += amount;
-  console.log("Total Amount by 8/unit : " + Number(amount));
+  unt = Math.floor(unit / 100);
+  unit = unit - unt * 100;
+  console.log("Total 100 Note  : " + unt);
+} else {
+  console.log("Total 100 Note : 0");
 }
-if (unit > 0) {
-  amount = 5 * unit;
-  totalAmount += amount;
-  console.log("Total Amount by 5/unit : " + Number(amount));
-  console.log("Total Paybal Amount  : ", Number(totalAmount));
+if (unit >= 50) {
+  unt = Math.floor(unit / 50);
+  unit = unit - unt * 50;
+  console.log("Total 50 Note  : " + unt);
+} else {
+  console.log("Total 50 Note : 0");
+}
+if (unit >= 20) {
+  unt = Math.floor(unit / 20);
+  unit = unit - unt * 20;
+  console.log("Total 20 Note  : " + unt);
+} else {
+  console.log("Total 20 Note : 0");
+}
+if (unit >= 10) {
+  unt = Math.floor(unit / 10);
+  unit = unit - unt * 10;
+  console.log("Total 10 Note  : " + unt);
+} else {
+  console.log("Total 10 Note : 0");
+}
+if (unit >= 5) {
+  unt = Math.floor(unit / 5);
+  unit = unit - unt * 5;
+  console.log("Total 5 Note  : " + unt);
+} else {
+  console.log("Total 5 Note : 0");
+}
+if (unit >= 2) {
+  unt = Math.floor(unit / 2);
+  unit = unit - unt * 2;
+  console.log("Total 2 Note  : " + unt);
+} else {
+  console.log("Total 2 Note : 0");
+}
+if (unit >= 1) {
+  unt = Math.floor(unit / 1);
+  unit = unit - unt * 1;
+  console.log("Total 1 Note  : " + unt);
+} else {
+  console.log("Total 1 Note : 0");
 }
