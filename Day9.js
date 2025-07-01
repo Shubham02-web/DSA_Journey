@@ -25,11 +25,22 @@
 // }
 // console.log(sumOfNaturalNumber(5));
 
-function factorial(n) {
-  let fact = 1;
-  for (let i = n; i >= 1; i--) {
-    fact = fact * i;
-  }
-  return fact;
-}
-console.log(factorial(5));
+// function factorial(n) {
+//   let fact = 1;
+//   for (let i = n; i >= 1; i--) {
+//     fact = fact * i;
+//   }
+//   return fact;
+// }
+// console.log(factorial(5));
+
+// function factors(n) {
+//   let fact = [];
+//   for (let i = 2; i <= Math.floor(n / 2); i++) {
+//     if (n % i === 0) fact.push(i);
+//     else continue;
+//   }
+//   return fact;
+// }
+
+// console.log(...factors(20));
