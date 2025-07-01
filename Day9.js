@@ -7,11 +7,20 @@
 // }
 // nhellowWord(5);
 
-function naturalNumer(n) {
-  let value = [];
-  for (let i = n; i > 0; i--) {
-    value.push(i);
+// function naturalNumer(n) {
+//   let value = [];
+//   for (let i = n; i > 0; i--) {
+//     value.push(i);
+//   }
+//   return value;
+// }
+// console.log(...naturalNumer(10));
+
+function sumOfNaturalNumber(n) {
+  let value = 0;
+  for (let i = 1; i <= n; i++) {
+    value += i;
   }
   return value;
 }
-console.log(...naturalNumer(10));
+console.log(sumOfNaturalNumber(5));
