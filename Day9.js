@@ -16,11 +16,20 @@
 // }
 // console.log(...naturalNumer(10));
 
-function sumOfNaturalNumber(n) {
-  let value = 0;
-  for (let i = 1; i <= n; i++) {
-    value += i;
+// function sumOfNaturalNumber(n) {
+//   let value = 0;
+//   for (let i = 1; i <= n; i++) {
+//     value += i;
+//   }
+//   return value;
+// }
+// console.log(sumOfNaturalNumber(5));
+
+function factorial(n) {
+  let fact = 1;
+  for (let i = n; i >= 1; i--) {
+    fact = fact * i;
   }
-  return value;
+  return fact;
 }
-console.log(sumOfNaturalNumber(5));
+console.log(factorial(5));
