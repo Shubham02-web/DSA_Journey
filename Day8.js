@@ -160,14 +160,14 @@
 // Ternary and nestead ternary opertator
 // console.log(10 > 5 ? (2 > 3 ? "2" : "3") : "5");
 
-let n = Number(prompt("Enter Number : "));
-switch (n) {
-  case 1:
-    console.log("Hey i am 1");
-    break;
-  case 2:
-    console.log("Hey i am 2");
-    break;
-  default:
-    console.log("not in a and b");
-}
+// let n = Number(prompt("Enter Number : "));
+// switch (n) {
+//   case 1:
+//     console.log("Hey i am 1");
+//     break;
+//   case 2:
+//     console.log("Hey i am 2");
+//     break;
+//   default:
+//     console.log("not in a and b");
+// }
