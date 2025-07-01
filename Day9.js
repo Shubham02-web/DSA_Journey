@@ -47,14 +47,25 @@
 
 // Prime Numbers
 
-function isPrime(n) {
-  if (n <= 0 || n === 1) return "Not a prime number";
-  if (n === 2 || n === 3) return "Prime Number";
-  if (n % 2 == 0) return "Not a prime Number";
-  for (let i = 3; i < Math.sqrt(n); i = i + 2) {
-    if (n % i === 0) return "Not a prime Number";
+// function isPrime(n) {
+//   if (n <= 0 || n === 1) return "Not a prime number";
+//   if (n === 2 || n === 3) return "Prime Number";
+//   if (n % 2 == 0) return "Not a prime Number";
+//   for (let i = 3; i < Math.sqrt(n); i = i + 2) {
+//     if (n % i === 0) return "Not a prime Number";
+//   }
+//   return "Primae Number";
+// }
+
+// console.log(isPrime(31));
+
+function sumOfDigit(n) {
+  let val = 0;
+  while (n > 0) {
+    val += Math.floor(n % 10);
+    n = n / 10;
   }
-  return "Primae Number";
+  return val;
 }
 
-console.log(isPrime(31));
+console.log(sumOfDigit(2546));
