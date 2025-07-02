@@ -24,28 +24,33 @@
 
 // Guess The Number
 
-const num = Math.floor(Math.random() * 100) + 1;
-let attempt = 0;
-let ans = -1;
+// const num = Math.floor(Math.random() * 100) + 1;
+// let attempt = 0;
+// let ans = -1;
 
-while (ans !== num) {
-  if (attempt == 5) {
-    console.log("you have enter 5 time Wrong Guess , try after some time");
-    break;
-  }
-  ans = Number(prompt("Guesss the number"));
-  if (isNaN(ans) || ans < 0 || ans > 100) {
-    console.log("try again with number range 0 to 100");
-    continue;
-  }
+// while (ans !== num) {
+//   if (attempt == 5) {
+//     console.log("you have enter 5 time Wrong Guess , try after some time");
+//     break;
+//   }
+//   ans = Number(prompt("Guesss the number"));
+//   if (isNaN(ans) || ans < 0 || ans > 100) {
+//     console.log("try again with number range 0 to 100");
+//     continue;
+//   }
 
-  attempt++;
+//   attempt++;
 
-  if (num > ans) {
-    console.log("too low , Try Again");
-  } else if (num < ans) {
-    console.log("too high ,  try again");
-  } else if (num == ans) {
-    console.log("Congrats , you guess it right");
-  }
+//   if (num > ans) {
+//     console.log("too low , Try Again");
+//   } else if (num < ans) {
+//     console.log("too high ,  try again");
+//   } else if (num == ans) {
+//     console.log("Congrats , you guess it right");
+//   }
+// }
+let val = -1;
+while (val !== 0) {
+  val = Number(prompt("Enter 0 to exit "));
+  console.log("Hellow World ");
 }
