@@ -49,8 +49,21 @@
 //     console.log("Congrats , you guess it right");
 //   }
 // }
-let val = -1;
-while (val !== 0) {
-  val = Number(prompt("Enter 0 to exit "));
-  console.log("Hellow World ");
-}
+// let val = -1;
+// while (val !== 0) {
+//   val = Number(prompt("Enter 0 to exit "));
+//   console.log("Hellow World ");
+// }
+
+let n1 = Number(prompt("Enter 1st Number"));
+let operator = prompt("Operation");
+let n2 = Number(prompt("Enter 2ns Number"));
+let result = 0;
+
+if (operator === "+") result = n1 + n2;
+else if (operator === "-") result = n1 - n2;
+else if (operator === "*") result = n1 * n2;
+else if (operator === "/") result = n2 === 0 ? "cant divide by 0" : n1 / n2;
+else result = "invalid operator";
+console.log(result);
+alert("Result : " + result);
