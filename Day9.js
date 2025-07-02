@@ -59,13 +59,26 @@
 
 // console.log(isPrime(31));
 
-function sumOfDigit(n) {
+// function sumOfDigit(n) {
+//   let val = 0;
+//   while (n > 0) {
+//     val += Math.floor(n % 10);
+//     n = n / 10;
+//   }
+//   return val;
+// }
+
+// console.log(sumOfDigit(2546));
+
+// Reverse Numder
+
+function reverseNumber(n) {
   let val = 0;
   while (n > 0) {
-    val += Math.floor(n % 10);
-    n = n / 10;
+    val = val * 10 + (n % 10);
+    n = Math.floor(n / 10);
   }
   return val;
 }
 
-console.log(sumOfDigit(2546));
+console.log(reverseNumber(2546));
