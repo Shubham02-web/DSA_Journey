@@ -1,12 +1,10 @@
-// Find Missing Number from 0 to n
+// 1.	Find the missing number in a given integer array of 1 to 100.
 
-// using the total and expected count
-function missingOne(nums) {
+function findMissing(nums) {
     let n = nums.length;
-    let expected = (n * (n + 1)) / 2;
-    let actual = nums.reduce((a, b) => a + b, 0);
-    return expected - actual;
+    let expectedSum = (n * (n + 1)) / 2;
+    let actualSum = nums.reduce((a, b) => a + b, 0);
+    return expectedSum - actualSum;
 }
-
-let arr = [0, 2, 1, 4, 3, 7, 5, 6, 8, 10];
-missingOne(arr);
+let arr = [1];
+console.log(findMissing(arr));
