@@ -30,22 +30,37 @@
 
 // find the duplicate number in an given array 1 to n+1 int number
 
-function findDuplicate(nums) {
-    let slow = nums[0];
-    let fast = nums[0];
+// function findDuplicate(nums) {
+//     let slow = nums[0];
+//     let fast = nums[0];
 
-    do {
-        slow = nums[slow];
-        fast = nums[nums[fast]];
-    } while (slow != fast);
+//     do {
+//         slow = nums[slow];
+//         fast = nums[nums[fast]];
+//     } while (slow != fast);
 
-    slow = nums[0];
-    while (slow != fast) {
-        slow = nums[slow];
-        fast = nums[fast];
-    }
-    return slow;
-}
+//     slow = nums[0];
+//     while (slow != fast) {
+//         slow = nums[slow];
+//         fast = nums[fast];
+//     }
+//     return slow;
+// }
 
-let arr = [3, 3, 3, 3, 3];
-console.log(findDuplicate(arr));
+// let arr = [3, 3, 3, 3, 3];
+// console.log(findDuplicate(arr));
+
+// 3.	Find the largest and smallest number in an unsorted integer array.
+
+// function smallestAndLargest(nums) {
+//     let small = nums[0];
+//     let larg = nums[0];
+//     for (let num of nums) {
+//         if (num < small) small = num;
+//         if (num > larg) larg = num;
+//     }
+//     return { min: small, max: larg };
+// }
+
+// let arr = [19, 6, 9, 4, 11, 7];
+// console.log(smallestAndLargest(arr));
