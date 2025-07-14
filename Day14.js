@@ -48,13 +48,28 @@
 
 // find the index which match their value to the target
 
-function findSum(arr, target) {
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length; j++) {
-            if (arr[i] + arr[j] === target && i !== j) return [i, j];
-        }
+// function findSum(arr, target) {
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = 0; j < arr.length; j++) {
+//             if (arr[i] + arr[j] === target && i !== j) return [i, j];
+//         }
+//     }
+// }
+
+// let arr = [0, 4, 9, 2, 8];
+// console.log(findSum(arr, 12));
+
+// Find Min And Max from an array
+function minAndMax(nums) {
+    let min = nums[0];
+    let max = nums[0];
+
+    for (let num of nums) {
+        if (min > num) min = num;
+        if (max < num) max = num;
     }
+    return { min: min, max: max };
 }
 
-let arr = [0, 4, 9, 2, 8];
-console.log(findSum(arr, 12));
+let arr = [7, 9, 47, 22, 8];
+console.log(minAndMax(arr));
