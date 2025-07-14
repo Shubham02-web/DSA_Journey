@@ -11,16 +11,37 @@
 // }
 
 // using nestead loop
-function findMissing(nums) {
-    for (let i = 0; i < nums.length + 1; i++) {
-        let flag = 1;
-        for (let j = 0; j < nums.length + 1; j++) {
-            if (i === nums[j]) {
-                flag = 0;
-            }
-        }
-        if (flag) return i;
+// function findMissing(nums) {
+//     for (let i = 0; i < nums.length + 1; i++) {
+//         let flag = 1;
+//         for (let j = 0; j < nums.length + 1; j++) {
+//             if (i === nums[j]) {
+//                 flag = 0;
+//             }
+//         }
+//         if (flag) return i;
+//     }
+// }
+// let arr = [2, 3, 6, 4, 0, 5];
+// console.log(findMissing(arr));
+
+// find duplicate among 0 to n+1 integer only one value is duplicate
+
+function findDuplicate(nums) {
+    let slow = nums[0];
+    let fast = nums[0];
+
+    do {
+        slow = nums[slow];
+        fast = nums[nums[fast]];
+    } while (slow != fast);
+
+    slow = nums[0];
+    while (slow != fast) {
+        slow = nums[slow];
+        fast = nums[fast];
     }
+    return slow;
 }
-let arr = [2, 3, 6, 4, 0, 5];
-console.log(findMissing(arr));
+let arr = [1, 2, 3, 4, 4];
+console.log(findDuplicate(arr));
