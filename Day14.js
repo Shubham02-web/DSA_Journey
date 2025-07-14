@@ -27,21 +27,34 @@
 
 // find duplicate among 0 to n+1 integer only one value is duplicate
 
-function findDuplicate(nums) {
-    let slow = nums[0];
-    let fast = nums[0];
+// function findDuplicate(nums) {
+//     let slow = nums[0];
+//     let fast = nums[0];
 
-    do {
-        slow = nums[slow];
-        fast = nums[nums[fast]];
-    } while (slow != fast);
+//     do {
+//         slow = nums[slow];
+//         fast = nums[nums[fast]];
+//     } while (slow != fast);
 
-    slow = nums[0];
-    while (slow != fast) {
-        slow = nums[slow];
-        fast = nums[fast];
+//     slow = nums[0];
+//     while (slow != fast) {
+//         slow = nums[slow];
+//         fast = nums[fast];
+//     }
+//     return slow;
+// }
+// let arr = [1, 2, 3, 4, 4];
+// console.log(findDuplicate(arr));
+
+// find the index which match their value to the target
+
+function findSum(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] + arr[j] === target && i !== j) return [i, j];
+        }
     }
-    return slow;
 }
-let arr = [1, 2, 3, 4, 4];
-console.log(findDuplicate(arr));
+
+let arr = [0, 4, 9, 2, 8];
+console.log(findSum(arr, 12));
