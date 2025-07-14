@@ -76,18 +76,48 @@
 
 // new queesttions
 // 5.	Find duplicate numbers in an array containing multiple duplicates.
+// function findDuplicate(nums) {
+//     let result = [];
+//     let seen = new Set();
+//     for (let num of nums) {
+//         if (seen.has(num)) {
+//             result[result.length] = num;
+//         } else {
+//             seen.add(num);
+//         }
+//     }
+//     return result;
+// }
+
+// Find Duplicate using freuenty
+
 function findDuplicate(nums) {
+    let freq = [];
     let result = [];
-    let seen = new Set();
-    for (let num of nums) {
-        if (seen.has(num)) {
-            result[result.length] = num;
+    for (let i = 0; i < nums.length; i++) {
+        let val = nums[i];
+        if (freq[val] === undefined) {
+            freq[val] = 1;
         } else {
-            seen.add(num);
+            freq[val]++;
+        }
+    }
+
+    for (let j = 0; j < freq.length; j++) {
+        if (freq[j] > 1) {
+            let isAdded = false;
+            for (let k = 0; k < result.length; k++) {
+                if (j == result[k]) {
+                    isAdded = true;
+                    break;
+                }
+            }
+            if (!isAdded) {
+                result[result.length] = j;
+            }
         }
     }
     return result;
 }
-
-const arr = [1, 5, 3, 8, 1, 8];
+const arr = [1, 5, 3, 5, 1, 8];
 console.log(findDuplicate(arr));
