@@ -60,16 +60,34 @@
 // console.log(findSum(arr, 12));
 
 // Find Min And Max from an array
-function minAndMax(nums) {
-    let min = nums[0];
-    let max = nums[0];
+// function minAndMax(nums) {
+//     let min = nums[0];
+//     let max = nums[0];
 
+//     for (let num of nums) {
+//         if (min > num) min = num;
+//         if (max < num) max = num;
+//     }
+//     return { min: min, max: max };
+// }
+
+// let arr = [7, 9, 47, 22, 8];
+// console.log(minAndMax(arr));
+
+// new queesttions
+// 5.	Find duplicate numbers in an array containing multiple duplicates.
+function findDuplicate(nums) {
+    let result = [];
+    let seen = new Set();
     for (let num of nums) {
-        if (min > num) min = num;
-        if (max < num) max = num;
+        if (seen.has(num)) {
+            result[result.length] = num;
+        } else {
+            seen.add(num);
+        }
     }
-    return { min: min, max: max };
+    return result;
 }
 
-let arr = [7, 9, 47, 22, 8];
-console.log(minAndMax(arr));
+const arr = [1, 5, 3, 8, 1, 8];
+console.log(findDuplicate(arr));
