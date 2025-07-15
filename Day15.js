@@ -63,18 +63,35 @@
 // console.log(removeDuplicate(arr));
 
 // 7.	Reverse an array in place.
-function reversArray(nums) {
-    let left = 0,
-        right = nums.length - 1,
-        temp = 0;
-    while (left < right) {
-        temp = nums[left];
-        nums[left] = nums[right];
-        nums[right] = temp;
-        left++;
-        right--;
+// function reversArray(nums) {
+//     let left = 0,
+//         right = nums.length - 1,
+//         temp = 0;
+//     while (left < right) {
+//         temp = nums[left];
+//         nums[left] = nums[right];
+//         nums[right] = temp;
+//         left++;
+//         right--;
+//     }
+//     return nums;
+// }
+// let arr = [0, 1, 2, 3, 4, 5];
+// console.log(reversArray(arr));
+
+// return intersection of two array return only  value with 1 count for all matching values even they apper more then one time
+function interSectionArray(nums1, nums2) {
+    let result = [];
+    for (let num1 of nums1) {
+        for (let num2 of nums2) {
+            if (num1 === num2 && !result.includes(num1)) {
+                result[result.length] = num1;
+            }
+        }
     }
-    return nums;
+    return result;
 }
-let arr = [0, 1, 2, 3, 4, 5];
-console.log(reversArray(arr));
+let nums1 = [4, 9, 5];
+let nums2 = [9, 4, 9, 8, 4];
+
+console.log(interSectionArray(nums1, nums2));
