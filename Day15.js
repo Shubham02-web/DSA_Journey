@@ -46,18 +46,35 @@
 // console.log(findDuplicate(array));
 
 //Remove duplicates from an array in place.
-function removeDuplicate(nums) {
-    if (nums.length === 0) return 0;
-    let i = 0;
-    for (let j = 0; j < nums.length; j++) {
-        if (nums[i] !== nums[j]) {
-            i++;
-            nums[i] = nums[j];
-        }
-    }
-    return { count: i + 1, nums };
-}
+// function removeDuplicate(nums) {
+//     if (nums.length === 0) return 0;
+//     let i = 0;
+//     for (let j = 0; j < nums.length; j++) {
+//         if (nums[i] !== nums[j]) {
+//             i++;
+//             nums[i] = nums[j];
+//         }
+//     }
+//     return { count: i + 1, nums };
+// }
 
 // let arr = [1, 1, 2];
-let arr = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
-console.log(removeDuplicate(arr));
+// let arr = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+// console.log(removeDuplicate(arr));
+
+// 7.	Reverse an array in place.
+function reversArray(nums) {
+    let left = 0,
+        right = nums.length - 1,
+        temp = 0;
+    while (left < right) {
+        temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+        left++;
+        right--;
+    }
+    return nums;
+}
+let arr = [0, 1, 2, 3, 4, 5];
+console.log(reversArray(arr));
