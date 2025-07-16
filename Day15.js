@@ -99,6 +99,7 @@
 // return an intesection as the number as they apper
 function interSectionArray(nums1, nums2) {
     let result = [];
+
     for (let num1 = 0; num1 < nums1.length; num1++) {
         for (let num2 = 0; num2 < nums2.length; num2++) {
             if (nums1[num1] === nums2[num2]) {

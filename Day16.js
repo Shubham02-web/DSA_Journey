@@ -12,6 +12,22 @@
 //     return temp;
 // }
 
-// let arr = [1, 9, 5, 7, 5, 9];
+function findDuplicate(nums) {
+    let slow = nums[0];
+    let fast = nums[0];
+    do {
+        slow = nums[slow];
+        fast = nums[nums[fast]];
+    } while (slow != fast);
 
-// console.log(findDuplicate(arr));
+    slow = nums[0];
+    while (slow != fast) {
+        slow = nums[slow];
+        fast = nums[fast];
+    }
+    return slow;
+}
+
+let arr = [1, 2, 3, 3, 4, 5, 6, 7];
+
+console.log(findDuplicate(arr));
