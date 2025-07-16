@@ -110,15 +110,37 @@
 // console.log(maxProduct(nums));
 
 // 10.	Find the minimum value in a rotated sorted array.
-function minVal(nums) {
+// function minVal(nums) {
+//     let min = nums[0];
+//     for (let num of nums) {
+//         if (num < min) {
+//             min = num;
+//         }
+//     }
+//     return min;
+// }
+
+// let nums = [4, 5, 6, 7, 0, 1, 2];
+// console.log(minVal(nums));
+
+// minimum in an array leetcode 154
+
+function minimumArr(nums) {
     let min = nums[0];
-    for (let num of nums) {
-        if (num < min) {
-            min = num;
+    let left = 0;
+    let right = nums.length - 1;
+    while (left <= right) {
+        if (nums[left] < min) {
+            min = nums[left];
+        } else if (nums[right] < min) {
+            min = nums[right];
         }
+        left++;
+        right--;
     }
     return min;
 }
 
-let nums = [4, 5, 6, 7, 0, 1, 2];
-console.log(minVal(nums));
+// let nums = [1, 3, 5];
+let nums = [2, 2, 2, 0, 1];
+console.log(minimumArr(nums));
