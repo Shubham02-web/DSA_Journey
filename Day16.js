@@ -125,22 +125,39 @@
 
 // minimum in an array leetcode 154
 
-function minimumArr(nums) {
-    let min = nums[0];
-    let left = 0;
-    let right = nums.length - 1;
-    while (left <= right) {
-        if (nums[left] < min) {
-            min = nums[left];
-        } else if (nums[right] < min) {
-            min = nums[right];
-        }
-        left++;
-        right--;
-    }
-    return min;
-}
+// function minimumArr(nums) {
+//     let min = nums[0];
+//     let left = 0;
+//     let right = nums.length - 1;
+//     while (left <= right) {
+//         if (nums[left] < min) {
+//             min = nums[left];
+//         } else if (nums[right] < min) {
+//             min = nums[right];
+//         }
+//         left++;
+//         right--;
+//     }
+//     return min;
+// }
 
 // let nums = [1, 3, 5];
-let nums = [2, 2, 2, 0, 1];
-console.log(minimumArr(nums));
+// let nums = [2, 2, 2, 0, 1];
+// console.log(minimumArr(nums));
+
+// 11.	Find the maximum sum subarray (Kadane’s algorithm).
+
+function maxSubArr(nums) {
+    let currSum = -Infinity;
+    let maxSum = -Infinity;
+    for (let i = 0; i < nums.length; i++) {
+        currSum = currSum + nums[i] > nums[i] ? currSum + nums[i] : nums[i];
+        maxSum = maxSum > currSum ? maxSum : currSum;
+    }
+    return maxSum;
+}
+
+// let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+// let nums = [1];
+let nums = [5, 4, -1, 7, 8];
+console.log(maxSubArr(nums));
