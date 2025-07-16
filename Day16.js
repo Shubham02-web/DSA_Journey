@@ -90,21 +90,35 @@
 // new question
 // 9.	Find the maximum product of two integers in an array.
 
-function maxProduct(nums) {
-    let max1 = nums[0];
-    let max2 = nums[0];
-    for (let num of nums) {
-        if (max1 < num) {
-            max2 = max1;
-            max1 = num;
-        } else if (max2 < num) {
-            max2 = num;
-        }
-    }
+// function maxProduct(nums) {
+//     let max1 = nums[0];
+//     let max2 = nums[0];
+//     for (let num of nums) {
+//         if (max1 < num) {
+//             max2 = max1;
+//             max1 = num;
+//         } else if (max2 < num) {
+//             max2 = num;
+//         }
+//     }
 
-    return (max1 - 1) * (max2 - 1);
-}
+//     return (max1 - 1) * (max2 - 1);
+// }
 
 // let nums = [1, 5, 4, 5];
-let nums = [3, 7];
-console.log(maxProduct(nums));
+// let nums = [3, 7];
+// console.log(maxProduct(nums));
+
+// 10.	Find the minimum value in a rotated sorted array.
+function minVal(nums) {
+    let min = nums[0];
+    for (let num of nums) {
+        if (num < min) {
+            min = num;
+        }
+    }
+    return min;
+}
+
+let nums = [4, 5, 6, 7, 0, 1, 2];
+console.log(minVal(nums));
