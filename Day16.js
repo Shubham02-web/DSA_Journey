@@ -32,19 +32,35 @@
 
 // console.log(findDuplicate(arr));
 
-function reverseArray(nums) {
-    let left = 0;
-    let right = nums.length - 1;
-    let temp = 0;
-    while (left < right) {
-        temp = nums[left];
-        nums[left] = nums[right];
-        nums[right] = temp;
-        left++;
-        right--;
+// function reverseArray(nums) {
+//     let left = 0;
+//     let right = nums.length - 1;
+//     let temp = 0;
+//     while (left < right) {
+//         temp = nums[left];
+//         nums[left] = nums[right];
+//         nums[right] = temp;
+//         left++;
+//         right--;
+//     }
+//     return nums;
+// }
+
+// let arr = [1, 2, 3, 4, 5];
+// console.log(reverseArray(arr));
+
+function intersection(nums1, nums2) {
+    for (let num1 of nums1) {
+        for (let num2 of nums2) {
+            if (num1 === num2) {
+                return num1;
+                break;
+            }
+        }
     }
-    return nums;
 }
 
-let arr = [1, 2, 3, 4, 5];
-console.log(reverseArray(arr));
+let nums1 = [4, 9, 5];
+let nums2 = [9, 4, 9, 8, 4];
+
+console.log(intersection(nums1, nums2));
