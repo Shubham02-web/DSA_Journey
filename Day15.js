@@ -80,12 +80,31 @@
 // console.log(reversArray(arr));
 
 // return intersection of two array return only  value with 1 count for all matching values even they apper more then one time
+// function interSectionArray(nums1, nums2) {
+//     let result = [];
+//     for (let num1 of nums1) {
+//         for (let num2 of nums2) {
+//             if (num1 === num2 && !result.includes(num1)) {
+//                 result[result.length] = num1;
+//             }
+//         }
+//     }
+//     return result;
+// }
+// let nums1 = [4, 9, 5];
+// let nums2 = [9, 4, 9, 8, 4];
+
+// console.log(interSectionArray(nums1, nums2));
+
+// return an intesection as the number as they apper
 function interSectionArray(nums1, nums2) {
     let result = [];
-    for (let num1 of nums1) {
-        for (let num2 of nums2) {
-            if (num1 === num2 && !result.includes(num1)) {
-                result[result.length] = num1;
+    for (let num1 = 0; num1 < nums1.length; num1++) {
+        for (let num2 = 0; num2 < nums2.length; num2++) {
+            if (nums1[num1] === nums2[num2]) {
+                result[result.length] = nums1[num1];
+                nums2[num2] = undefined;
+                nums1[num1] = undefined;
             }
         }
     }
