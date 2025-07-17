@@ -1,18 +1,54 @@
 // Find the maximum product of two integers n-1  in an array.
-function findMaxProduct(nums) {
-    let max1 = nums[0];
-    let max2 = nums[0];
-    for (let num of nums) {
-        if (num > max1) {
-            max2 = max1;
-            max1 = num;
-        } else if (max2 < num) {
-            max2 = num;
+// function findMaxProduct(nums) {
+//     let max1 = nums[0];
+//     let max2 = nums[0];
+//     for (let num of nums) {
+//         if (num > max1) {
+//             max2 = max1;
+//             max1 = num;
+//         } else if (max2 < num) {
+//             max2 = num;
+//         }
+//     }
+//     return (max1 - 1) * (max2 - 1);
+// }
+
+// let nums = [1, 5, 4, 5];
+// let nums = [3, 7];
+// console.log(findMaxProduct(nums));
+
+// 10.	Find the minimum value in a rotated sorted array.
+
+// function minimumVal(nums) {
+//     let min = Infinity;
+//     for (let num of nums) {
+//         if (min > num) {
+//             min = num;
+//         }
+//     }
+//     return min;
+// }
+
+// let nums = [4, 5, 6, 7, 8, 1, 2];
+// console.log(minimumVal(nums));
+
+// minimum in an array using Left Right Apporach
+
+function minArr(nums) {
+    let min = Infinity;
+    let left = 0;
+    let right = nums.length;
+    while (left <= right) {
+        if (nums[left] < min) {
+            min = nums[left];
+        } else if (nums[right] < min) {
+            min = nums[right];
         }
+        left++;
+        right--;
     }
-    return (max1 - 1) * (max2 - 1);
+    return min;
 }
 
-let nums = [1, 5, 4, 5];
-// let nums = [3, 7];
-console.log(findMaxProduct(nums));
+let nums = [8, 15, 6, 7, 8, 9, 11];
+console.log(minArr(nums));
