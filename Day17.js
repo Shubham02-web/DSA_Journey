@@ -34,21 +34,38 @@
 
 // minimum in an array using Left Right Apporach
 
-function minArr(nums) {
-    let min = Infinity;
-    let left = 0;
-    let right = nums.length;
-    while (left <= right) {
-        if (nums[left] < min) {
-            min = nums[left];
-        } else if (nums[right] < min) {
-            min = nums[right];
-        }
-        left++;
-        right--;
+// function minArr(nums) {
+//     let min = Infinity;
+//     let left = 0;
+//     let right = nums.length;
+//     while (left <= right) {
+//         if (nums[left] < min) {
+//             min = nums[left];
+//         } else if (nums[right] < min) {
+//             min = nums[right];
+//         }
+//         left++;
+//         right--;
+//     }
+//     return min;
+// }
+
+// let nums = [8, 15, 6, 7, 8, 9, 11];
+// console.log(minArr(nums));
+
+// 11.	Find the maximum sum subarray (Kadane’s algorithm).
+
+function subArr(nums) {
+    let currsum = 0;
+    let maxSum = 0;
+    for (let num of nums) {
+        currsum = currsum + num > num ? currsum + num : num;
+        maxSum = currsum > maxSum ? currsum : maxSum;
     }
-    return min;
+    return maxSum;
 }
 
-let nums = [8, 15, 6, 7, 8, 9, 11];
-console.log(minArr(nums));
+// let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+// let nums = [1];
+// let nums = [5, 4, -1, 7, 8];
+console.log(subArr(nums));
