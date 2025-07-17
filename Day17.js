@@ -72,21 +72,42 @@
 
 // Find the sub array with the given sum positive number only
 
-function subArr(nums, target) {
-    let start = 0;
-    let currSum = 0;
-    for (let end = 0; end < nums.length; end++) {
-        currSum += nums[end];
+// function subArr(nums, target) {
+//     let start = 0;
+//     let currSum = 0;
+//     for (let end = 0; end < nums.length; end++) {
+//         currSum += nums[end];
 
-        if (currSum > target) {
-            currSum = currSum - nums[start];
-            start++;
-        }
-        if (currSum === target) {
-            return nums.slice(start, end + 1);
-        }
-    }
-    return [];
+//         if (currSum > target) {
+//             currSum = currSum - nums[start];
+//             start++;
+//         }
+//         if (currSum === target) {
+//             return nums.slice(start, end + 1);
+//         }
+//     }
+//     return [];
+// }
+
+// console.log(subArr([2, 4, 6], 12));
+
+// rotate an array from K position
+function rotate(nums, k) {
+    k = k % nums.length;
+    reverse(nums, 0, nums.length - 1);
+    reverse(nums, 0, k - 1);
+    reverse(nums, k, nums.length - 1);
+
+    return nums;
 }
 
-console.log(subArr([2, 4, 6], 12));
+function reverse(nums, start, end) {
+    while (start < end) {
+        [nums[start], nums[end]] = [nums[end], nums[start]];
+        start++;
+        end--;
+    }
+}
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log(rotate(arr, 3));
