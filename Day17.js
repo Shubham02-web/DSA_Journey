@@ -55,17 +55,38 @@
 
 // 11.	Find the maximum sum subarray (Kadane’s algorithm).
 
-function subArr(nums) {
-    let currsum = 0;
-    let maxSum = 0;
-    for (let num of nums) {
-        currsum = currsum + num > num ? currsum + num : num;
-        maxSum = currsum > maxSum ? currsum : maxSum;
-    }
-    return maxSum;
-}
+// function subArr(nums) {
+//     let currsum = 0;
+//     let maxSum = 0;
+//     for (let num of nums) {
+//         currsum = currsum + num > num ? currsum + num : num;
+//         maxSum = currsum > maxSum ? currsum : maxSum;
+//     }
+//     return maxSum;
+// }
 
 // let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 // let nums = [1];
 // let nums = [5, 4, -1, 7, 8];
-console.log(subArr(nums));
+// console.log(subArr(nums));
+
+// Find the sub array with the given sum positive number only
+
+function subArr(nums, target) {
+    let start = 0;
+    let currSum = 0;
+    for (let end = 0; end < nums.length; end++) {
+        currSum += nums[end];
+
+        if (currSum > target) {
+            currSum = currSum - nums[start];
+            start++;
+        }
+        if (currSum === target) {
+            return nums.slice(start, end + 1);
+        }
+    }
+    return [];
+}
+
+console.log(subArr([2, 4, 6], 12));
