@@ -147,17 +147,17 @@
 
 // 11.	Find the maximum sum subarray (Kadane’s algorithm).
 
-function maxSubArr(nums) {
-    let currSum = -Infinity;
-    let maxSum = -Infinity;
-    for (let i = 0; i < nums.length; i++) {
-        currSum = currSum + nums[i] > nums[i] ? currSum + nums[i] : nums[i];
-        maxSum = maxSum > currSum ? maxSum : currSum;
-    }
-    return maxSum;
-}
+// function maxSubArr(nums) {
+//     let currSum = -Infinity;
+//     let maxSum = -Infinity;
+//     for (let i = 0; i < nums.length; i++) {
+//         currSum = currSum + nums[i] > nums[i] ? currSum + nums[i] : nums[i];
+//         maxSum = maxSum > currSum ? maxSum : currSum;
+//     }
+//     return maxSum;
+// }
 
 // let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 // let nums = [1];
-let nums = [5, 4, -1, 7, 8];
-console.log(maxSubArr(nums));
+// let nums = [5, 4, -1, 7, 8];
+// console.log(maxSubArr(nums));
