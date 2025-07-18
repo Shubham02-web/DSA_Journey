@@ -89,7 +89,7 @@
 //     return [];
 // }
 
-// console.log(subArr([2, 4, 6], 12));
+// console.log(subArr([6, 3, 5], 6));
 
 // rotate an array from K position
 // function rotate(nums, k) {
@@ -109,16 +109,16 @@
 //     }
 // }
 
-function rotate(nums, k) {
-    for (let i = 0; i < k; i++) {
-        let temp = nums[nums.length - 1];
-        for (let j = nums.length - 2; j >= 0; j--) {
-            nums[j + 1] = [nums[j] + nums[j + 1]] - nums[j + 1];
-        }
-        nums[0] = temp;
-    }
-    return nums;
-}
+// function rotate(nums, k) {
+//     for (let i = 0; i < k; i++) {
+//         let temp = nums[nums.length - 1];
+//         for (let j = nums.length - 2; j >= 0; j--) {
+//             nums[j + 1] = [nums[j] + nums[j + 1]] - nums[j + 1];
+//         }
+//         nums[0] = temp;
+//     }
+//     return nums;
+// }
 
-let arr = [1, 2, 3, 4, 5, 6, 7];
-console.log(rotate(arr, 3));
+// let arr = [1, 2, 3, 4, 5, 6, 7];
+// console.log(rotate(arr, 3));
